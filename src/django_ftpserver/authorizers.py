@@ -107,6 +107,7 @@ class FTPAccountAuthorizer(personate_user_class):
     def validate_authentication(self, username, password, handler):
         """authenticate user with password
         """
+        import pdb; pdb.set_trace()
         user = authenticate(
             **{self.username_field: username, 'password': password}
         )

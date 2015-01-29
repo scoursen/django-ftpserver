@@ -21,6 +21,9 @@ def get_user_model_path():
 
 
 def get_username_field():
+    field_name = getattr(settings, 'AUTH_USERNAME_FIELD', None)
+    if field_name:
+        return field_name
     if django.VERSION >= (1, 5):
         from django.contrib.auth import get_user_model
         UserModel = get_user_model()
